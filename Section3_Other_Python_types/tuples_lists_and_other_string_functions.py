@@ -9,3 +9,6 @@ print("#####################################################")
 
 myBrother = ["Joshua","Isaac", "Salcedo", "Carreno"]
 print(str(myBrother[0:1]) + " " + str(myBrother[2:3]))
+print(“you can also print from begining to a certain point, or from a certain point to the end”)
+print(myName[:2])
+print(myBrother[2:])
