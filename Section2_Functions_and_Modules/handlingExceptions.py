@@ -22,14 +22,22 @@ finally:
 
 print("You can also raise your own errors. In other words, code exceptions that might happen, so that if someone writes something the code isn't supposed to do, you will manually alert the user of such error")
 
-var1 = 10
-var2 = "HELLO WORLD"
-if isinstance(var2,str):
-    raise TypeError("var 2 nees to be an integer")
+###
+#var1 = 10
+#var2 = "HELLO WORLD"
+#if isinstance(var2,str):
+#    raise TypeError("var 2 nees to be an integer")
 
+#try:
+#    num = 5/0
+#except:
+#    print("An error occured")
+#    raise #Even though the exception is caught here, using raise by itself will actually print out the exception message that was generated when the error was caught
 
-try:
-    num = 5/0
-except:
-    print("An error occured")
-    raise #Even though the exception is caught here, using raise by itself will actually print out the exception message that was generated when the error was caught
+print("We also have a sanity check function, 'assertion'")
+print(1)
+print(2)
+assert 1+2 == 3
+assert (2+2 == 3),"4 does not equal to 3"
+print("its a good idea to put assertion before a function to check for correct input, and after assertions to check for the correct type of output")
+
