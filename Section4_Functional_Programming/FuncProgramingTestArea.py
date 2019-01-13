@@ -40,3 +40,51 @@ mapResult = list(map(add_five, numbers))
 print(mapResult)
 filterResult = list(filter(lambda x: x%4 == 0, numbers))
 print(filterResult)
+
+
+#######################################
+print("Understanding Generators - yield")
+print("The yield function is a little harder to understand, as it doesn't save the values it generates as it \"iterates\"")
+def countdown():
+    i=0
+    while True:
+        i+=1
+        yield i**2
+        if (input("Continue?") == "y"):
+            continue
+        else:
+            return i**2
+for y in countdown():
+    print(y)
+
+
+def finitecountdown(i):
+    while i>0:
+        i-=1
+        if i%3 == 0:
+            yield i
+        else:
+            continue
+
+countVal = input("Please input a number: ")
+myList = list(finitecountdown(int(countVal)))
+print(myList)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
