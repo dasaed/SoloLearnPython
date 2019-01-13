@@ -1,0 +1,5 @@
+I am a student at MUN.
+I am doing a Masters in Computer Science.
+My name is Carlos Salcedo.
+I love Erika Prada, my wife.
+This is just a test file, to learn how to work with files on python.
