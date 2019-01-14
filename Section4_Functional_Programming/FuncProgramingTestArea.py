@@ -70,21 +70,127 @@ countVal = input("Please input a number: ")
 myList = list(finitecountdown(int(countVal)))
 print(myList)
 
+print("###############################################################")
+print("decorators")
+
+def decor(func):
+    def wrap():
+        print("###############################################################")
+        func()
+        print("###############################################################")
+    return wrap   
+
+def moredecor(func):
+    def mwrap():
+        print("**************************************************************")
+        func()
+        print("**************************************************************")
+    return mwrap   
+
+
+def print_text():
+    return "I am just a line"
+
+decorated = decor(  print_text ) 
+decorated()
+
+#This is another way of using decorator functions
+print("--------------------------------------------------------------")
+@moredecor
+@decor
+@moredecor
+def print_mtext():
+    print("I am just another line")
+print_mtext()
+
+print("--------------------------------------------------------------")
+print("######## Sample Basic Recursive Functions ##########")
+
+def recursiveFactorial(x):
+    if x<=1:
+         return 1
+    else:
+         return x*recursiveFactorial(x - 1)
+
+print( "The Factorial of 10 is: "+str(recursiveFactorial(10)))
 
 
 
+series=[0,1]
+def fib(x):
+    if x <= 1: 
+        return 
+    else: 
+        series.append(series[len(series) - 2]+series[len(series)-1])
+        fib(x-1)
+    return series
+
+print( "This is just the output of a fibonacci series up to the 10th term: "+str(fib(10)))
+
+print("########## sets  ##########")
+print("""
+Sets are the same thing as lists, except their elements cannot be repeated(they are not indexed), and to add or remove elements, you use the methods
+.add() and .pop(). In list you would use .apend() or .remove().
+Friendly Reminder:
+[ ] = list
+( ) = tuple
+{ } = set
+{ } = dictionary ( remember it is with key : value pair)
+
+Also, 
+
+{} = empty dictionary
+set() = empty set
 
 
+Sets can be combined using mathematical operations.
+The union operator | combines two sets to form a new one containing items in either. 
+The intersection operator & gets items only in both. 
+The difference operator - gets items in the first set but not in the second. 
+The symmetric difference operator ^ gets items in either set, but not both.
+""")
 
+first = {1, 2, 3, 4, 5, 6}
+second = {4, 5, 6, 7, 8, 9}
 
+print(first | second) # prints items in neither
+print(first & second) # prints itmes in both
+print(first - second) # prints items only in the first, but not the second
+print(second - first) # prints itmes only in the second, but not in the first
+print(first ^ second) # prints items in either first or second
 
+#    itertools
+#    
+#    The module itertools is a standard library that contains several functions that are useful in functional programming. 
+#    One type of function it produces is infinite iterators. 
+#    The function count counts up infinitely from a value. 
+#    The function cycle infinitely iterates through an iterable (for instance a list or string). 
+#    The function repeat repeats an object, either infinitely or a specific number of times.
+#    Example:
+#    from itertools import count
+#    
+#    for i in count(3):
+#      print(i)
+#      if i >=11:
+#        break
+#    Try It Yourself
+#    
+#    Result:
+#    >>>
+#    3
+#    4
+#    5
+#    6
+#    7
+#    8
+#    9
+#    10
+#    11
+#    >>>
+#    There are also several combinatoric functions in itertool, such as 'product' and 'permutation'.
+a={1, 2}
+print(len(list(product(range(3), a))))
 
-
-
-
-
-
-
-
-
-
+nums = [1, 2, 8, 3, 7]
+res = list( filter ( lambda x: x% 2 ==0, nums)) 
+print(res) 
