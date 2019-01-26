@@ -40,3 +40,6 @@ mapResult = list(map(add_five, numbers))
 print(mapResult)
 filterResult = list(filter(lambda x: x%4 == 0, numbers))
 print(filterResult)
+
+
+print("Understanding yields is a litte bit more complicated. ")
